@@ -1,46 +1,114 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+<div>
+  <div  @click="hello" style="cursor:pointer; display:block;">여기를 클릭해봐
+  </div>
+    <div>{{msg}}</div>
+  <div @click="error= !error">에러 on/off</div>
+  <div v-if="error">에러가 ON 되었습니다.</div>
+   <input placeholder="금액을 입력해주세요" type="number" v-model="price">
+  <div>입력 가격: {{price}}원</div>
+  <div>부가세: {{vat}}</div>
+  <div>총 지불할 금액: {{total}}</div>
+  
 
 
-      <div>Hello welcome to my site</div>
+  <div style="display:flex; justify-content:space-between; border-bottom:1px solid #3e8c75; background-color:#3e8c75; color:white; font-size:14px; font-weight:500;">
+    <div>번호</div>
+    <div>도시</div>
+    <div>동작</div>
+  </div>
+  <div>
+    <div v-for="(city,idx) in citis" :key="idx" style="display:flex; justify-content:space-between; align-items:center;padding:2px;border-bottom:1px solid #3e8c75">
+      <div>{{idx}}</div>
+      <div>{{city}}
+        <div>{{newStyle}}</div>
+        </div>
+      <div style="background-color:#3e8c75; color:white; width:30px; padding:5px; cursor:pointer; border-radius:5px;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
+      @click="selectCity(city)">선택</div>
+    </div>
+  </div>
+  <div>
+    <div><div>{{selected}}</div></div>
+  </div>
+
+  <div>
+    <input v-model="searchCity" type="text" placeholder="Where do you wanna travel?">
+    <ul>
+      <li v-for="city in filteredCities" :key="city.id">{{city}}</li>
     </ul>
   </div>
+</div>
+
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+
+  },
+
+  data() { 
+    return {
+      selected: "",
+      error:false,
+      newname:"n",
+      price:'',
+      searchCity:'',
+      citis:[ '프랑스','이탈리아','독일'],
+      travelList: ['usa','korea','japen','thailand','turkey','canada','saudi','toilet']
+    }
+    
+  },
+
+  methods: {
+  
+    hello() {
+      const sayHello = function greeting(inVal) {
+      alert(inVal +'님' + '안녕하세요')
+      }
+      sayHello("수경");
+
+    //   const sayhi = (inVal) => {alert(inVal)}
+    // sayhi("du")
+    },
+    selectCity(item) {
+      this.selected = `선택된 도시 = ${item}`
+      this.newname = 'n'
+    }
+
+  },
+
+  computed: {
+
+    foo() {
+      return (bar) => {
+        return bar +1
+      }
+    },
+    vat() {
+     
+      return this.price/10
+      
+    },
+    total() {
+   
+      return  parseFloat(this.price)+ this.vat
+   
+    },
+    filteredCities() {
+      return this.travelList.filter(item => item.match(this.searchCity))
+
+    },
+    newStyle() {
+      if(this.selected === this.city){this.newname}
+      return ''
+    }
+   
+    
   }
+
 }
 </script>
 
@@ -50,12 +118,10 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
-  list-style-type: none;
-  padding: 0;
+
 }
 li {
-  display: inline-block;
-  margin: 0 10px;
+
 }
 a {
   color: #42b983;
