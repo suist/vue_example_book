@@ -72,18 +72,17 @@
     ></div>
     <div style="width: 960px; margin: 50px auto; display: flex">
       <div style="width: 600px; height: 600px">
-        <div class="title">Wego 맞춤형 트레이너 추천</div>
+        <div class="title">KT 그린바이크 플랫폼 - TAZO 현장 관리자 앱</div>
         <div style="display: flex; justify-content: center">
-          <div class="desc">Frontend / Vue / vuex</div>
+          <div class="desc">CrossPlatform app / React-native</div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.03 ~ 진행중</div>
-          <div>- filter 적용된 상태 관리 vuex</div>
-          <div>- 폼 관련 Dynamic component 사용</div>
-          <div>- 회원가입 validation</div>
-          <div>- axios http통신</div>
-          <div>- 비동기 검색 페이지</div>
-          <div>- 일정 선택 캘린더 제작</div>
+          <div>project : 2020.06 ~ 2020.10</div>
+          <div>- 공유자전거 수거,블루투스 라커 관리, 운영현황 관리 앱 제작</div>
+          <div>- React-native / redux</div>
+          <div>- RSA 보안</div>
+          <div>- react-navigation v.5</div>
+          <div>- GPS,MAP,BLE,CAMERA, 네이티브 기능 이용</div>
         </div>
         <sweet-modal modal-theme="dark" overlay-theme="dark" ref="modal1">
           Wego 맞춤형 트레이너 추천
@@ -97,10 +96,41 @@
         </sweet-modal>
       </div>
       <div style="position:relative;right-200px; width:360px">
-        <slider></slider>
+        <Slider1></Slider1>
       </div>
     </div>
-
+    <!-- 오아시스 -->
+    <div
+      style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
+    ></div>
+    <div style="width: 960px; margin: 50px auto; display: flex">
+      <img
+        src="../assets/oasis.png"
+        class="link-icon"
+        style="width: 460px"
+        @click="linkOasis"
+      />
+      <div style="width: 500px; height: 300px">
+        <div class="title">오아시스 비즈니스 / 관리자 사이트 제작</div>
+        <div style="display: flex; justify-content: center">
+          <div class="desc">Frontend / Vue.js / React.js</div>
+          <div
+            class="material-icons link-icon"
+            style="color: #42b983; margin: 0 8px"
+            @click="linkOasis"
+          >
+            language
+          </div>
+        </div>
+        <div class="desc-group">
+          <div>project : 2020.04</div>
+          <div>- CSS / HTML</div>
+          <div>- 어드민 :Vue.js</div>
+          <div>- User Page:React.js</div>
+        </div>
+      </div>
+    </div>
+    <!-- wego -->
     <div
       style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
     ></div>
@@ -111,7 +141,7 @@
           <div class="desc">Frontend / Vue / vuex</div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.03 ~ 진행중</div>
+          <div>project : 2020.03 ~ 2020.04</div>
           <div>- filter 적용된 상태 관리 vuex</div>
           <div>- 폼 관련 Dynamic component 사용</div>
           <div>- 회원가입 validation</div>
@@ -161,7 +191,7 @@
           </div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.3 ~</div>
+          <div>project : 2020.3 -2020.4</div>
           <div>- Auth -> JWT</div>
           <div>- 파일 추가</div>
           <div>- Mongoose</div>
@@ -194,7 +224,7 @@
           </div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.03</div>
+          <div>project : 2020.03- 2020.04</div>
           <div>- CSS / HTML</div>
           <div>- Responsive Web</div>
           <div>- Vue.js</div>
@@ -225,7 +255,7 @@
           </div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.03</div>
+          <div>project : 2020.03 - 2020.04</div>
           <div>- 모바일 / PC 퍼블리싱</div>
         </div>
       </div>
@@ -254,7 +284,7 @@
           </div>
         </div>
         <div class="desc-group">
-          <div>project : 2020.02</div>
+          <div>project : 2020.02 -2020.02</div>
           <div>- 등급 별 접근 권한 유효성</div>
           <div>- 입찰,경매 시스템 상태에 따른 필터 제작</div>
           <div></div>
@@ -288,7 +318,7 @@
           </div>
         </div>
         <div class="desc-group">
-          <div>project : 2019.12</div>
+          <div>project : 2019.12- 2020.1</div>
           <div>- 등급 별 접근 권한 유효성</div>
           <div>- 입찰,경매 시스템 상태에 따른 필터 제작</div>
           <div>- save & load -> firebase DB</div>
@@ -301,10 +331,12 @@
 
 <script>
 import Slider from "./Slider";
+import Slider1 from "./Slider1";
 export default {
   name: "HelloWorld",
   components: {
     Slider,
+    Slider1,
   },
   props: {},
 
@@ -323,6 +355,9 @@ export default {
   methods: {
     linkLaunchPack() {
       window.open("http://pg.launchpack.co.kr/", "_blank");
+    },
+    linkOasis() {
+      window.open("https://www.oasisbusiness.co.kr/", "_blank");
     },
     linkLaunchPack1() {
       window.open("https://www.omipc.com/", "_blank");
