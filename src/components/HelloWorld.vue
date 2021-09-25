@@ -3,8 +3,8 @@
     <div style="display: flex; justify-content: center; margin: 50px">
       <div>
         <img
-          src="../assets/IMAG0240.jpg"
-          style="width: 20%; border-radius: 50%"
+          src="../assets/오수경.jpg"
+          style="width: 30%; border-radius: 50%"
         />
         <div style="display: flex; justify-content: center; margin: 8px">
           <img
@@ -66,7 +66,137 @@
         </div>
       </div>
     </div>
+    <!-- 카인드 -->
+    <div
+      style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
+    ></div>
+    <div style="width: 960px; margin: 50px auto; display: flex">
+      <img
+        src="../assets/kind1.png"
+        class="link-icon"
+        style="width: 400px;margin:0px 0px"
+        @click="linkKind"
+      />
+      <div style="width: 600px; height: 400px">
+        <div class="title">카인드, 까다로운 남녀를 위한 소개팅</div>
+        <div style="display: flex; justify-content: center">
+          <div class="desc">CrossPlatform app / React-native</div>
+          <div
+            class="material-icons link-icon"
+            style="color: #42b983; margin: 0 8px"
+            @click="linkKind"
+          >
+            language
+          </div>
+        </div>
+        <div class="desc-group">
+          <div>project : 2021.04 ~ 2021.09</div>
+          <div>- React-native / redux</div>
+          <div>- react-navigation v.5</div>
+          <div>- 기존앱 마이페이지 고도화 & 리뉴얼</div>
+          <div>- 퍼포먼스 개선</div>
+          <div>- animation 추가</div>
+        </div>
+        <sweet-modal modal-theme="dark" overlay-theme="dark" ref="modal1">
+          Wego 맞춤형 트레이너 추천
+          <br /><br />
 
+          <iframe
+            width="560"
+            height="315"
+            src="https://ondemand.launchpack.co.kr/home"
+          ></iframe>
+        </sweet-modal>
+      </div>
+    </div>
+    <!-- 두산 -->
+    <div
+      style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
+    ></div>
+    <div style="width: 960px; margin: 50px auto; display: flex">
+      <img
+        src="../assets/doosan.png"
+        class="link-icon"
+        style="width: 460px;height:360px;padding:50px 0px; margin:0px 0px"
+        @click="linkDoosan"
+      />
+      <div style="width: 600px; height: 400px">
+        <div class="title">Doosan Equipment Sales for Smartphone</div>
+        <div style="display: flex; justify-content: center">
+          <div class="desc">CrossPlatform app / React-native</div>
+          <div
+            class="material-icons link-icon"
+            style="color: #42b983; margin: 0 8px"
+            @click="linkDoosan"
+          >
+            language
+          </div>
+        </div>
+        <div class="desc-group">
+          <div>project : 2020.12 ~ 2021.4</div>
+          <div>- 기존 태블릿용 앱 스마트폰 버전 출시</div>
+          <div>- React-native / redux</div>
+          <div>- 두산 해외 딜러 전용 오프라인 앱</div>
+          <div>- react-navigation v.5</div>
+          <div>- realm -오프라인 DB 관리</div>
+          <div>- 다국어 지원,영상 이미지 다운로드 및 관리,로그,firebase,</div>
+        </div>
+        <sweet-modal modal-theme="dark" overlay-theme="dark" ref="modal1">
+          Wego 맞춤형 트레이너 추천
+          <br /><br />
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://ondemand.launchpack.co.kr/home"
+          ></iframe>
+        </sweet-modal>
+      </div>
+    </div>
+    <!-- 비앤빛 -->
+    <div
+      style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
+    ></div>
+    <div style="width: 960px; margin: 50px auto; display: flex">
+      <img
+        src="../assets/bnviit1.png"
+        class="link-icon"
+        style="width: 460px; margin: 0 0px"
+        @click="linkBnviit"
+      />
+      <div style="width: 600px; height: 600px">
+        <div class="title">비앤빛 안과 스마트 케어 앱</div>
+        <div style="display: flex; justify-content: center">
+          <div class="desc">CrossPlatform app / React-native</div>
+          <div
+            class="material-icons link-icon"
+            style="color: #42b983; margin: 0 8px"
+            @click="linkBnviit"
+          >
+            language
+          </div>
+        </div>
+        <div class="desc-group">
+          <div>project : 2020.10 ~ 2021.2</div>
+          <div>- 기존 웹앱 react native로 고도화</div>
+          <div>- React-native / redux</div>
+          <div>- 라식 수술후 안약 넣는 시간 PUSH 알람</div>
+          <div>- react-navigation v.5</div>
+          <div>- 3개언어 지원,사진 업로드,차트,</div>
+        </div>
+        <sweet-modal modal-theme="dark" overlay-theme="dark" ref="modal1">
+          Wego 맞춤형 트레이너 추천
+          <br /><br />
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://ondemand.launchpack.co.kr/home"
+          ></iframe>
+        </sweet-modal>
+      </div>
+    </div>
+    <!-- KT -->
     <div
       style="border-top: 1px solid #eaeaea; width: 960px; margin: 100px auto"
     ></div>
@@ -75,6 +205,13 @@
         <div class="title">KT 그린바이크 플랫폼 - TAZO 현장 관리자 앱</div>
         <div style="display: flex; justify-content: center">
           <div class="desc">CrossPlatform app / React-native</div>
+          <div
+            class="material-icons link-icon"
+            style="color: #42b983; margin: 0 8px"
+            @click="linkTazo"
+          >
+            language
+          </div>
         </div>
         <div class="desc-group">
           <div>project : 2020.06 ~ 2020.10</div>
@@ -345,9 +482,9 @@ export default {
       frontData: [
         "React-native",
         "Vue.js / Vuex / VueRouter",
-        "React.js / Redux ",
+        "React.js / Redux / saga",
       ],
-      backendData: ["Node.js (express)", "Java"],
+      backendData: ["Node.js (express)", "Java Spring boot"],
       ect: ["Git", "Jira", "Heroku", "AWS S3", "Firebase"],
     };
   },
@@ -355,6 +492,30 @@ export default {
   methods: {
     linkLaunchPack() {
       window.open("http://pg.launchpack.co.kr/", "_blank");
+    },
+    linkKind() {
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.kind",
+        "_blank"
+      );
+    },
+    linkDoosan() {
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.doosaninfracore.dealersales.rn",
+        "_blank"
+      );
+    },
+    linkBnviit() {
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.xelan.bnviitsmartcare",
+        "_blank"
+      );
+    },
+    linkTazo() {
+      window.open(
+        "https://play.google.com/store/apps/details?id=kr.co.omni.tazo&showAllReviews=true",
+        "_blank"
+      );
     },
     linkOasis() {
       window.open("https://www.oasisbusiness.co.kr/", "_blank");
